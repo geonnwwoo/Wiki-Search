@@ -1,4 +1,19 @@
 body {
-  font-size: 16px;
+  font-size: 18px;
   font-family: 'Open Sans';
+}
+
+.search-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+
+input {
+  border-radius: 25px;
+  border: 2px solid rgba(41, 41, 41);
+  padding: 20px; 
+  width: 90%;
+  height: 25px;  
 }
