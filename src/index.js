@@ -13,6 +13,7 @@ const createWindow = () => {
     height: 600,
     webPreferences: {
       nodeIntegration: true,
+      contextIsolation: false
     },
   });
 
@@ -47,3 +48,18 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
+
+console.log('hello world')
+
+let userInput;
+
+function startupFunc() {
+  userInput = select('#user-input');
+  userInput.changed(getWiki);
+
+
+  function getWiki() {
+    let inputstr = userInput.value();
+    console.log(inputstr);
+  }
+}
