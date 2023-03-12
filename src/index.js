@@ -33,13 +33,30 @@ app.on('activate', () => {
   }
 });
 
-function createBrowserWindow() {
-  const remote = require('electron').remote;
-  const BrowserWindow = remote.BrowserWindow;
-  const win = new BrowserWindow({
+
+
+
+
+// Child Window
+
+const createChildWindow = () => {
+  const childWindow = new BrowserWindow({
+    width: 800,
     height: 600,
-    width: 800
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false
+    },
   });
 
-  win.loadURL('search-page.html');
-}
+  childWindow.loadFile(path.join(__dirname, 'search-page.html'));
+  childWindow.webContents.openDevTools();
+};
+
+app.on('ready', createChildWindow);
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
+});
