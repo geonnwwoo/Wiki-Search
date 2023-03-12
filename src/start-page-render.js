@@ -11,5 +11,5 @@ document.querySelector("#aa1").addEventListener('keypress', checkEnter, false);
 function searched() {
     let searchVal = document.querySelector("#aa2").value;
     console.log(searchVal);
-    document.removeEventListener('keypress', checkEnter);
+    document.querySelector("#aa1").removeEventListener('keypress', checkEnter);
 }
