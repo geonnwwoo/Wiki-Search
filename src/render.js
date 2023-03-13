@@ -19,5 +19,6 @@ function searched() {
     console.log(searchVal);
     document.querySelector("#aa1").removeEventListener('keypress', checkEnter);
     document.querySelector('#aa3').removeEventListener('click', checkEnterButton)
+    location.href='search-page.html' ;
 }
 
