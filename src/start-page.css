@@ -50,12 +50,18 @@ body {
 }
 
 .search-query-wrapper {
+  background-color: #ffff;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
   height: 25px;
   margin: auto;
   border-radius: 10px;
+  transition: background-color 400ms ease;
+}
+
+.search-query-wrapper:hover {
+  background-color: #e3e5e8;
 }
 
 #aa5 {
