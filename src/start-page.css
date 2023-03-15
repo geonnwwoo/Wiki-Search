@@ -1,18 +1,12 @@
-/* Color Scheme :
-Powder Blue: #A7BED3
-Light Blue: #C6E2E9
-Cream (Light Neon Green): #F1FFC4
-Apricot: #FFCAAF
-Tan: #DAB894
-*/
-
 body {
-  font-size: 20px;
+  font-size: 100px;
   font-family: 'Verdana';
   background-color: #ffff;
 }
 
-.search-wrapper {
+/* MAIN */
+
+.search-bar-wrapper {
   display: flex;
   flex-direction: row;
   gap: 0.25rem;
@@ -50,17 +44,19 @@ body {
 }
 
 .search-query-wrapper {
-  background-color: #ffff;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  height: 25px;
   margin: auto;
-  border-radius: 10px;
-  transition: background-color 400ms ease;
 }
 
-.search-query-wrapper:hover {
+.search_result {
+  width: 90%;
+  height: 50px;
+}
+
+.search-result:hover {
   background-color: #e3e5e8;
 }
 
@@ -72,3 +68,12 @@ body {
   border: none;
 }
 
+
+
+/* MENU_BAR */
+
+.MENU_BAR {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
