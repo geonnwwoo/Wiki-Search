@@ -21,7 +21,7 @@ body {
 }
 
 #aa2 {
-  border-radius: 10px;
+  border-radius: 6px;
   background: #e3e5e8;
   padding: 10px; 
   width: 90%;
@@ -34,7 +34,7 @@ body {
   width: 45px;
   height: 45px;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 6px;
   border: none;
   transition: background-color 400ms ease;
 }
