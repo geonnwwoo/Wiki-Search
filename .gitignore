@@ -36,4 +36,3 @@ typings/
 .dynamodb/
 .webpack/
 out/
-.txt
