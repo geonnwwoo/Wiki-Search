@@ -46,7 +46,6 @@ function gotData(data) {
         let header = card.querySelector("[data-header]");
         let body = card.querySelector("[data-body]");
         header.textContent = data[1][i];
-        body.textContent = data[3][i];
         userCardContainer.append(card);
     }
 }
