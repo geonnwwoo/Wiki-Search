@@ -1,4 +1,4 @@
-// Move to Search Results Page
+// Scraping Info with Wikipedia API
 
 let searchUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=';
 let contentUrl = 'https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=';
@@ -31,14 +31,12 @@ function searched() {
     let searchVal = document.querySelector(".search-bar-input").value;
     let url = searchUrl + searchVal;
     dataTitles = JSON.parse(getUrl(url));
-    console.log(searchVal);
     gotData(dataTitles);
 
     //location.href='search-page.html' ;
 }
 
 function gotData(dataf) {
-    console.log(dataf[1].length);
     let dataLength = dataf[1].length;
 
     if (dataLength != 0) {
@@ -63,3 +61,19 @@ function redirectToSearchPage(pagenumber) {
     let pageContent = page[pageID].revisions["0"]["*"];
     console.log(pageContent);
 }
+
+
+
+
+
+
+
+// Visual
+
+
+
+//document.querySelector("body").style["background-color"] = ;
+//document.querySelector(".search-bar-input").style["background"] = ;
+//document.querySelector(".search-bar-enter").style["background-color"] = ;
+//document.querySelector(".search-bar-enter:hover").style["background-color"] = ;
+

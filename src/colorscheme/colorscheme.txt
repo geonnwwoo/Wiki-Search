@@ -1,1 +1,1 @@
-Discord.txt
+Discord.json
