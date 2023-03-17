@@ -25,7 +25,7 @@ body {
   height: 20px;
 }
 
-#aa2 {
+.search-bar-input {
   border-radius: 6px;
   background: #e3e5e8;
   padding: 10px; 
@@ -34,7 +34,7 @@ body {
   height: 25px;
 }
 
-#aa3 {
+.search-bar-enter {
   background-color: #5864f2;
   width: 45px;
   height: 45px;
@@ -44,7 +44,7 @@ body {
   transition: background-color 400ms ease;
 }
 
-#aa3:hover {
+.search-bar-enter:hover {
   background-color: #4751c4;
 }
 
@@ -58,7 +58,7 @@ body {
   height: 100px;
 }
 
-#aa5 {
+.search-result {
   width: 90%;
   padding: 10px;
   height: 30px;
@@ -69,7 +69,7 @@ body {
   transition: background-color 200ms ease;
 }
 
-#aa5:hover {
+.search-result:hover {
   background-color: #e3e5e8;
 }
 
