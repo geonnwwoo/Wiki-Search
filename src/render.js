@@ -94,7 +94,11 @@ readTextFile("colorscheme/colorscheme.txt", function(text1) {
 
 function gotColorScheme(cs) {
     let colorschemeCSS = JSON.parse(cs);
-    document.querySelector("body").style["background-color"] = colorschemeCSS["body"];
-    document.querySelector(".search-bar-input").style["background"] = colorschemeCSS["search-bar-input"];
+    let r = document.querySelector(':root');
+    r.style.setProperty('--body-color', colorschemeCSS["body"]);
+    r.style.setProperty('--search-bar-input-color', colorschemeCSS["search-bar-input"]);
+    r.style.setProperty('--search-bar-enter-color', colorschemeCSS["search-bar-enter"]);
+    r.style.setProperty('--search-bar-enter-hover-color', colorschemeCSS["search-bar-enter-hover"]);
+    r.style.setProperty('--search-result-hover-color', colorschemeCSS["search-result-hover"]);
 }
 

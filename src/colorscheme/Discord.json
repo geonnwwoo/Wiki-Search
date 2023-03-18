@@ -2,6 +2,6 @@
     "body":"#ffffff",
     "search-bar-input":"#e3e5e8",
     "search-bar-enter":"#5864f2",
-    "search-bar-hover":"#4751c4",
+    "search-bar-enter-hover":"#4751c4",
     "search-result-hover":"#e3e5e8"
 }

@@ -1,6 +1,15 @@
+:root {
+  --body-color: transparent;
+  --search-bar-input-color: transparent;
+  --search-bar-enter-color: transparent;
+  --search-bar-enter-hover-color: transparent;
+  --search-result-hover-color: transparent;
+}
+
 body {
   font-size: 16px;
   font-family: 'Verdana';
+  background-color: var(--body-color);
 }
 
 /* MAIN */
@@ -30,6 +39,7 @@ body {
   width: 90%; 
   border: none;
   height: 25px;
+  background-color: var(--search-bar-input-color);
 }
 
 .search-bar-enter {
@@ -39,10 +49,11 @@ body {
   border-radius: 6px;
   border: none;
   transition: background-color 400ms ease;
+  background-color: var(--search-bar-enter-color);
 }
 
 .search-bar-enter:hover {
-  background-color: #4751c4;
+  background-color: var(--search-bar-enter-hover-color);
 }
 
 .search-query-wrapper {
@@ -67,7 +78,7 @@ body {
 }
 
 .search-result:hover {
-  background-color: #e3e5e8;
+  background-color: var(--search-result-hover-color);
 }
 
 
