@@ -63,13 +63,6 @@ function redirectToSearchPage(pagenumber) {
 }
 
 
-
-
-
-
-
-
-
 // VISUAL (COLORSCHEMES)
 
 function readTextFile(file, callback) {
