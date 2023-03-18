@@ -1,7 +1,6 @@
 body {
   font-size: 16px;
   font-family: 'Verdana';
-  background-color: #ffffff;
 }
 
 /* MAIN */
@@ -27,7 +26,6 @@ body {
 
 .search-bar-input {
   border-radius: 6px;
-  background: #e3e5e8;
   padding: 10px; 
   width: 90%; 
   border: none;
@@ -35,7 +33,6 @@ body {
 }
 
 .search-bar-enter {
-  background-color: #5864f2;
   width: 45px;
   height: 45px;
   padding: 10px;

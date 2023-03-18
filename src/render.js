@@ -72,10 +72,29 @@ function redirectToSearchPage(pagenumber) {
 
 // VISUAL (COLORSCHEMES)
 
+function readTextFile(file, callback) {
+    let rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType("application/json");
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function() {
+        if (rawFile.readyState === 4 && rawFile.status == "200") {
+            callback(rawFile.responseText);
+        }
+    }
+    rawFile.send(null);
+}
 
+readTextFile("colorscheme/colorscheme.txt", function(text1) {
+    let colorscheme = text1;
+    readTextFile("colorscheme/"+colorscheme, function(text2) {
+        let colorschemeText = text2;
+        gotColorScheme(colorschemeText);
+    });
+});
 
-//document.querySelector("body").style["background-color"] = ;
-//document.querySelector(".search-bar-input").style["background"] = ;
-//document.querySelector(".search-bar-enter").style["background-color"] = ;
-//document.querySelector(".search-bar-enter:hover").style["background-color"] = ;
+function gotColorScheme(cs) {
+    let colorschemeCSS = JSON.parse(cs);
+    document.querySelector("body").style["background-color"] = colorschemeCSS["body"];
+    document.querySelector(".search-bar-input").style["background"] = colorschemeCSS["search-bar-input"];
+}
 
