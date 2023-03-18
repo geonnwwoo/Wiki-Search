@@ -33,5 +33,4 @@ app.on('activate', () => {
   }
 });
 
-// MAIN PROCESS
-
+//const ipc = electron.ipcMain;
