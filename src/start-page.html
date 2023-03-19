@@ -6,23 +6,25 @@
     <script defer src="start-page-render.js"></script>
   </head>
   <body>
-    <div class="SEARCH">
-      <div class="search-bar-wrapper">
-        <input class="search-bar-input" placeholder="Search a Wikipedia Article">
-        <button class="search-bar-enter">
-          <img src="images/search-icon-img.png" class="search-icon">
-        </button>
+    <div class="MAIN">
+      <div class="MENU_BAR">
+        
       </div>
-      <div class="search-query-wrapper" data-search-query-container></div>
-      <template search-results-template>
-        <button class="search-result" id="" onclick="redirectToSearchPage(id)">
-          <p id="aa6" class="search-result-header" data-header></p>
-        </button>
-      </template>
-    </div>
-    
-    <div class="MENU_BAR">
-      
+      <div class="SEARCH">
+        <div class="search-bar-wrapper">
+          <input class="search-bar-input" placeholder="Search a Wikipedia Article">
+          <button class="search-bar-enter">
+            <img src="images/search-icon-img.png" class="search-icon">
+          </button>
+        </div>
+        <div class="search-query-wrapper" data-search-query-container></div>
+        <template search-results-template>
+          <button class="search-result" id="" onclick="redirectToSearchPage(id)">
+            <p id="aa6" class="search-result-header" data-header></p>
+          </button>
+        </template>
+      </div>
+      </div>
     </div>
   </body>
 </html>
