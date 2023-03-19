@@ -5,7 +5,7 @@ if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
-let createWindow = () => {
+const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
@@ -32,5 +32,3 @@ app.on('activate', () => {
     createWindow();
   }
 });
-
-//const ipc = electron.ipcMain;
