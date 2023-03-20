@@ -1,5 +1,7 @@
 const { app, BrowserWindow } = require('electron');
+const electron = require('electron');
 const path = require('path');
+const ipc = electron.ipcMain;
 
 if (require('electron-squirrel-startup')) {
   app.quit();
@@ -17,6 +19,10 @@ const createWindow = () => {
 
   mainWindow.loadFile(path.join(__dirname, 'start-page.html'));
   mainWindow.webContents.openDevTools();
+
+  ipc.on('start->search', function(event, message) {
+    console.log(message);
+  })
 };
 
 app.on('ready', createWindow);

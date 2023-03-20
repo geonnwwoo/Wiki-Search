@@ -1,5 +1,7 @@
 // WIKIPEDIA API
 
+const electron = require("electron");
+const ipc = electron.ipcRenderer;
 let searchUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=';
 let contentUrl = 'https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=';
 let userCardTemplate = document.querySelector("[search-results-template]");
@@ -32,8 +34,6 @@ function searched() {
     let url = searchUrl + searchVal;
     dataTitles = JSON.parse(getUrl(url));
     gotData(dataTitles);
-
-    //location.href='search-page.html' ;
 }
 
 function gotData(dataf) {
@@ -60,6 +60,7 @@ function redirectToSearchPage(pagenumber) {
     let page = articleData.query.pages;
     let pageContent = page[pageID].revisions["0"]["*"];
     console.log(pageContent);
+    ipc.send('start->search', pageContent);
 }
 
 
