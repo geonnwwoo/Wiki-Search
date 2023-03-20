@@ -19,11 +19,14 @@ const createWindow = () => {
 
   mainWindow.loadFile(path.join(__dirname, 'start-page.html'));
   mainWindow.webContents.openDevTools();
-
   ipc.on('start->search', function(event, message) {
-    console.log(message);
-    mainWindow.loadFile(path.join(__dirname, 'search-page.html'));
-  })
+    async function loadSearchFile() {
+      mainWindow.loadFile(path.join(__dirname, 'search-page.html'));
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      mainWindow.webContents.send('start->search: content article received', message);
+    }
+    loadSearchFile();
+  });
 };
 
 app.on('ready', createWindow);
