@@ -22,6 +22,7 @@ const createWindow = () => {
 
   ipc.on('start->search', function(event, message) {
     console.log(message);
+    mainWindow.loadFile(path.join(__dirname, 'search-page.html'));
   })
 };
 
