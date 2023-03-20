@@ -22,5 +22,5 @@
 	"compileOnSave": false,
 	"include": [
 		"./src/**/*.ts"
-	]
+, "src/index.js", "src/index.js"	]
 }
