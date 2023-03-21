@@ -60,7 +60,7 @@ function redirectToSearchPage(pagenumber) {
     let page = articleData.query.pages;
     let pageContent = page[pageID].revisions["0"]["*"];
     console.log(pageContent);
-    ipc.send('start->search', pageContent);
+    ipc.send('start->search', pageContent, dataTitles[1][pagenumber]);
 }
 
 
