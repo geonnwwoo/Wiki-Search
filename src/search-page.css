@@ -1,0 +1,9 @@
+:root {
+    --body-color: transparent
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Verdana';
+    background-color: var(--body-color);
+}
