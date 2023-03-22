@@ -3,13 +3,13 @@
 const electron = require("electron");
 const ipc = electron.ipcRenderer;
 let searchUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=';
-let contentUrl = 'https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=';
+let contentUrl = 'https://en.wikipedia.org/w/api.php?action=query&explaintext=1&format=json&formatversion=2&origin=*&prop=extracts&titles=';
 let userCardTemplate = document.querySelector("[search-results-template]");
 let userCardContainer = document.querySelector("[data-search-query-container]");
 let dataTitles = "";
 
 function getUrl(yourUrl){
-    var Httpreq = new XMLHttpRequest(); // a new request
+    var Httpreq = new XMLHttpRequest();
     Httpreq.open("GET",yourUrl,false);
     Httpreq.send(null);
     return Httpreq.responseText;          
@@ -56,10 +56,7 @@ function redirectToSearchPage(pagenumber) {
     let redirectTitle = dataTitles[1][pagenumber];
     title = (contentUrl) + (redirectTitle.replace(" ", "_"));
     let articleData = JSON.parse(getUrl(title));
-    let pageID = Object.keys(articleData.query.pages)[0];
-    let page = articleData.query.pages;
-    let pageContent = page[pageID].revisions["0"]["*"];
-    console.log(pageContent);
+    let pageContent = articleData.query.pages["0"].extract;
     ipc.send('start->search', pageContent, dataTitles[1][pagenumber]);
 }
 
