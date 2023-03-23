@@ -27,9 +27,9 @@ function readTextFile(file, callback) {
     rawFile.send(null);
 }
 
-readTextFile("colorscheme/colorscheme.txt", function(text1) {
+readTextFile("../colorscheme/colorscheme.txt", function(text1) {
     let colorscheme = text1;
-    readTextFile("colorscheme/"+colorscheme, function(text2) {
+    readTextFile("../colorscheme/"+colorscheme, function(text2) {
         let colorschemeText = text2;
         gotColorScheme(colorschemeText);
     });
