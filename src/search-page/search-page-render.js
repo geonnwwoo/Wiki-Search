@@ -3,7 +3,39 @@ const ipc = electron.ipcRenderer;
 const title = document.querySelector(".title");
 const body = document.querySelector(".content");
 
+function splitStringByHeaders(str) {
+    const regex = /^(={2,4})(.+?)(={2,4})/gm;
+    const matches = [...str.matchAll(regex)];
+    const sections = [];
+    let lastIndex = 0;
+  
+    matches.forEach(match => {
+      const [fullMatch, headerType, headerText] = match;
+      const headerLevel = headerType.length - 1;
+  
+      // Add the normal text section before the current header
+      const normalText = str.substring(lastIndex, match.index);
+      if (normalText.length > 0) {
+        sections.push({ type: "normal", content: normalText });
+      }
+  
+      // Add the current header to the sections array
+      sections.push({ type: `header${headerLevel}`, content: headerText.trim() });
+  
+      lastIndex = match.index + fullMatch.length;
+    });
+  
+    // Add the remaining normal text section
+    const remainingText = str.substring(lastIndex);
+    if (remainingText.length > 0) {
+      sections.push({ type: "normal", content: remainingText });
+    }
+  
+    return sections;
+}
+
 ipc.on('start->search: content article received', function(event, articleContent) {
+    console.log(splitStringByHeaders(articleContent));
     body.textContent = articleContent;
 });
 
