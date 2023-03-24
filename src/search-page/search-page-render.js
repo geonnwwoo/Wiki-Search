@@ -35,6 +35,32 @@ ipc.on('start->search: content article received', function(event, articleContent
     console.log(splitStringByHeaders(articleContent));
     splitArticleContent = splitStringByHeaders(articleContent);
     splitArticleContentLength = splitArticleContent.length;
+    for (let i=0; i<splitArticleContentLength; i++) {
+        if (splitArticleContent[i]["type"] == "normal") {
+            const clone = textCard.content.cloneNode(true);
+            const nodeTextContent = clone.querySelector(".content-text-content");
+            nodeTextContent.textContent = splitArticleContent[i]["content"];
+            textContainer.append(clone);
+        }
+        else if (splitArticleContent[i]["type"] == "header1") {
+            const clone = headerCard.content.cloneNode(true);
+            const nodeTextContent = clone.querySelector(".content-header-content");
+            nodeTextContent.textContent = splitArticleContent[i]["content"];
+            textContainer.append(clone);
+        }
+        else if (splitArticleContent[i]["type"] == "header2") {
+            const clone = subheaderCard.content.cloneNode(true);
+            const nodeTextContent = clone.querySelector(".content-subheader-content");
+            nodeTextContent.textContent = splitArticleContent[i]["content"];
+            textContainer.append(clone);
+        }
+        else if (splitArticleContent[i]["type"] == "header3") {
+            const clone = subsubheaderCard.content.cloneNode(true);
+            const nodeTextContent = clone.querySelector(".content-subsubheader-content");
+            nodeTextContent.textContent = splitArticleContent[i]["content"];
+            textContainer.append(clone);
+        }
+    }
 });
 
 ipc.on('start->search: title received', function(event, articleTitle) {
