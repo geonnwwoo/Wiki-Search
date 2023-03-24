@@ -1,42 +1,40 @@
 const electron = require("electron");
 const ipc = electron.ipcRenderer;
 const title = document.querySelector(".title");
-const body = document.querySelector(".content");
+const textContainer = document.querySelector(".content");
+const headerCard = document.querySelector(".content-header");
+const subheaderCard = document.querySelector(".content-subheader");
+const subsubheaderCard = document.querySelector(".content-subsubheader");
+const textCard = document.querySelector(".content-text");
+
+
 
 function splitStringByHeaders(str) {
     const regex = /^(={2,4})(.+?)(={2,4})/gm;
     const matches = [...str.matchAll(regex)];
     const sections = [];
     let lastIndex = 0;
-  
     matches.forEach(match => {
       const [fullMatch, headerType, headerText] = match;
-      const headerLevel = headerType.length - 1;
-  
-      // Add the normal text section before the current header
+      const headerLevel = headerType.length - 1;  
       const normalText = str.substring(lastIndex, match.index);
       if (normalText.length > 0) {
         sections.push({ type: "normal", content: normalText });
       }
-  
-      // Add the current header to the sections array
-      sections.push({ type: `header${headerLevel}`, content: headerText.trim() });
-  
+        sections.push({ type: `header${headerLevel}`, content: headerText.trim() });
       lastIndex = match.index + fullMatch.length;
     });
-  
-    // Add the remaining normal text section
     const remainingText = str.substring(lastIndex);
     if (remainingText.length > 0) {
       sections.push({ type: "normal", content: remainingText });
     }
-  
     return sections;
 }
 
 ipc.on('start->search: content article received', function(event, articleContent) {
     console.log(splitStringByHeaders(articleContent));
-    body.textContent = articleContent;
+    splitArticleContent = splitStringByHeaders(articleContent);
+    splitArticleContentLength = splitArticleContent.length;
 });
 
 ipc.on('start->search: title received', function(event, articleTitle) {
