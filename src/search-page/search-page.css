@@ -7,3 +7,29 @@ body {
     font-family: 'Verdana';
     background-color: var(--body-color);
 }
+
+/* MAIN */
+
+.MAIN {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+/* ARTICLE */
+
+.ARTICLE {
+    width: 100%;
+}
+
+
+
+/* MENU_BAR */
+
+.MENU_BAR {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    width: 20%;
+    min-width: 120px;
+  }
