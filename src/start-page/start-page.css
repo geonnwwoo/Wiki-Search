@@ -10,20 +10,21 @@ body {
   font-size: 16px;
   font-family: 'Verdana';
   background-color: var(--body-color);
+  margin: 0px;
 }
 
 /* MAIN */
 
 .MAIN {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 4fr; 
 }
 
 /* SEARCH */
 
-.SEARCH {
-  display: flex;
-  flex-direction: column;
+.SEARCH { 
+  display: grid; 
+  grid-template-rows: 70px 100px;
   width: 100%;
 }
 
@@ -31,9 +32,9 @@ body {
   display: flex;
   flex-direction: row;
   gap: 0.25rem;
-  width: 100%;
-  height: 55px;
   margin: auto;
+  padding: 10px;
+  width: 90%;
 }
 
 .search-icon {
@@ -70,7 +71,7 @@ body {
   flex-direction: column;
   gap: 0.25rem;
   margin: auto;
-  width: 100%;
+  width: 90%;
   height: 100px;
 }
 
@@ -85,17 +86,20 @@ body {
   transition: background-color 200ms ease;
 }
 
+.search-result-header {
+  margin-top: -3px;
+}
+
 .search-result:hover {
   background-color: var(--search-result-hover-color);
 }
-
 
 /* MENU_BAR */
 
 .MENU_BAR {
   display: flex;
   flex-direction: column;
-  height: 100px;
-  width: 20%;
-  min-width: 120px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }
