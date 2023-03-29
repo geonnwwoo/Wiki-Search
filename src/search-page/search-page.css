@@ -6,22 +6,22 @@ body {
     font-size: 16px;
     font-family: 'Verdana';
     background-color: var(--body-color);
+    margin: 0px;
 }
 
 /* MAIN */
 
 .MAIN {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
     width: 100%;
 }
 
 /* ARTICLE */
 
 .ARTICLE {
-    width: 100%;
+    width: 90%;
 }
-
 
 
 /* MENU_BAR */
@@ -29,8 +29,7 @@ body {
 .MENU_BAR {
     display: flex;
     flex-direction: column;
-    height: 100px;
-    width: 30%;
-    min-width: 120px;
-    max-width: 250px;
-  }
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
