@@ -95,4 +95,5 @@ function gotColorScheme(cs) {
     let colorschemeCSS = JSON.parse(cs);
     let r = document.querySelector(':root');
     r.style.setProperty('--body-color', colorschemeCSS["SEARCH-body"]);
+    r.style.setProperty('--menu-color', colorschemeCSS["ALL-menu-color"]);
 }

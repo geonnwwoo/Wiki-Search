@@ -1,5 +1,6 @@
 :root {
-    --body-color: transparent
+    --body-color: transparent;
+    --menu-color: transparent;
 }
 
 body {
@@ -21,6 +22,7 @@ body {
 
 .ARTICLE {
     width: 90%;
+    padding: 10px;
 }
 
 
@@ -32,4 +34,5 @@ body {
     height: 100vh;
     position: sticky;
     top: 0;
+    background-color: var(--menu-color);
 }

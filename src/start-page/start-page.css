@@ -4,6 +4,7 @@
   --search-bar-enter-color: transparent;
   --search-bar-enter-hover-color: transparent;
   --search-result-hover-color: transparent;
+  --menu-color: transparent;
 }
 
 body {
@@ -102,4 +103,5 @@ body {
   height: 100vh;
   position: sticky;
   top: 0;
+  background-color: var(--menu-color);
 }
