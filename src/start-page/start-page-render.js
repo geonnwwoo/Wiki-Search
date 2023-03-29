@@ -91,5 +91,6 @@ function gotColorScheme(cs) {
     r.style.setProperty('--search-bar-enter-color', colorschemeCSS["START-search-bar-enter"]);
     r.style.setProperty('--search-bar-enter-hover-color', colorschemeCSS["START-search-bar-enter-hover"]);
     r.style.setProperty('--search-result-hover-color', colorschemeCSS["START-search-result-hover"]);
+    r.style.setProperty('--menu-color', colorschemeCSS["ALL-menu-color"]);
 }
 
