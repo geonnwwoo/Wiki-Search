@@ -7,8 +7,6 @@ const subheaderCard = document.querySelector(".content-subheader");
 const subsubheaderCard = document.querySelector(".content-subsubheader");
 const textCard = document.querySelector(".content-text");
 
-
-
 function splitStringByHeaders(str) {
     const regex = /^(={2,4})(.+?)(={2,4})/gm;
     const matches = [...str.matchAll(regex)];
@@ -96,4 +94,5 @@ function gotColorScheme(cs) {
     let r = document.querySelector(':root');
     r.style.setProperty('--body-color', colorschemeCSS["SEARCH-body"]);
     r.style.setProperty('--menu-color', colorschemeCSS["ALL-menu-color"]);
+    r.style.setProperty('--menu-text-color', colorschemeCSS["ALL-menu-text-color"]);
 }

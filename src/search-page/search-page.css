@@ -1,14 +1,29 @@
 :root {
+    font-size: 16px;
+    font-family: 'Verdana';
     --body-color: transparent;
     --menu-color: transparent;
+    --menu-text-color: transparent;
+    --scrollbar-track: transparent;
+    --scrollbar-thumb: transparent;
 }
 
 body {
-    font-size: 16px;
-    font-family: 'Verdana';
     background-color: var(--body-color);
     margin: 0px;
-}
+  }
+  
+  body::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+  }
 
 /* MAIN */
 
@@ -36,3 +51,9 @@ body {
     top: 0;
     background-color: var(--menu-color);
 }
+
+.menu-bar-element-text {
+    font-size: 16px;
+    color: var(--menu-text-color);
+    padding: 10px;
+  }
