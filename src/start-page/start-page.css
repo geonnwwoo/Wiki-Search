@@ -1,10 +1,15 @@
 :root {
+  font-size: 16px;
+  font-family: 'Open Sans';
   --body-color: transparent;
   --search-bar-input-color: transparent;
   --search-bar-enter-color: transparent;
   --search-bar-enter-hover-color: transparent;
   --search-result-hover-color: transparent;
   --menu-color: transparent;
+  --menu-text-color: transparent;
+  --scrollbar-track: transparent;
+  --scrollbar-thumb: transparent;
 }
 
 body {
@@ -14,14 +19,23 @@ body {
   margin: 0px;
 }
 
-/* MAIN */
+body::-webkit-scrollbar {
+  width: 0.25rem;
+
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+}
 
 .MAIN {
   display: grid;
-  grid-template-columns: 1fr 4fr; 
+  grid-template-columns: 1fr 6fr; 
 }
-
-/* SEARCH */
 
 .SEARCH { 
   display: grid; 
@@ -95,8 +109,6 @@ body {
   background-color: var(--search-result-hover-color);
 }
 
-/* MENU_BAR */
-
 .MENU_BAR {
   display: flex;
   flex-direction: column;
@@ -104,4 +116,8 @@ body {
   position: sticky;
   top: 0;
   background-color: var(--menu-color);
+}
+
+.menu-bar-element-text {
+  font-size: 16px;
 }
