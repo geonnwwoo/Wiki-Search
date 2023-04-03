@@ -52,7 +52,7 @@ body {
     background-color: var(--menu-color);
 }
 
-.menu-bar-element-text {
+.menu-bar-element {
     font-size: 16px;
     color: var(--menu-text-color);
     padding: 10px;
