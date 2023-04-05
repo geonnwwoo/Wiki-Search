@@ -29,7 +29,7 @@ function splitStringByHeaders(str) {
     return sections;
 }
 
-ipc.on('start->search: content article received', function(event, articleContent) {
+ipc.on('toSearch: content article received', function(event, articleContent) {
     console.log(splitStringByHeaders(articleContent));
     splitArticleContent = splitStringByHeaders(articleContent);
     splitArticleContentLength = splitArticleContent.length;
@@ -61,7 +61,7 @@ ipc.on('start->search: content article received', function(event, articleContent
     }
 });
 
-ipc.on('start->search: title received', function(event, articleTitle) {
+ipc.on('toSearch: title received', function(event, articleTitle) {
     title.textContent = articleTitle;
 });
 
