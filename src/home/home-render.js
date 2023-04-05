@@ -52,12 +52,12 @@ function gotData(dataf) {
     }
 }
 
-function redirectToSearchPage(pagenumber) {
+function toSearch(pagenumber) {
     let redirectTitle = dataTitles[1][pagenumber];
     title = (contentUrl) + (redirectTitle.replace(" ", "_"));
     let articleData = JSON.parse(getUrl(title));
     let pageContent = articleData.query.pages["0"].extract;
-    ipc.send('start->search', pageContent, dataTitles[1][pagenumber]);
+    ipc.send('toSearch', pageContent, dataTitles[1][pagenumber]);
 }
 
 
