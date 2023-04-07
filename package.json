@@ -15,7 +15,8 @@
   "author": "Geonwoo Kim",
   "license": "MIT",
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "vue": "2.7.14"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.5",
