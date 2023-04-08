@@ -1,1 +1,1 @@
-Discord.json
+Spotify.json

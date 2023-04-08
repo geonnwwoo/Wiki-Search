@@ -1,0 +1,13 @@
+{
+    "START-body":"#121212",
+    "START-search-bar-input":"#ffffff",
+    "START-search-bar-enter":"#5864f2",
+    "START-search-bar-enter-hover":"#4751c4",
+    "START-search-result-text":"#ffffff",
+    "START-search-result-hover":"#2a2929",
+    "SEARCH-body":"#ffffff",
+    "ALL-menu-color":"#000000",
+    "ALL-menu-text-color": "#ffffff",
+    "ALL-menu-scrollbar-track": "#transparent",
+    "ALL-menu-scrollbar-thumb": "transparent"
+}

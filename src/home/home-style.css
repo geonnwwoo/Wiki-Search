@@ -1,10 +1,11 @@
 :root {
   font-size: 16px;
-  font-family: 'Verdana';
+  font-family: 'Varcela Round';
   --body-color: transparent;
   --search-bar-input-color: transparent;
   --search-bar-enter-color: transparent;
   --search-bar-enter-hover-color: transparent;
+  --search-result-text-color: transparent;
   --search-result-hover-color: transparent;
   --menu-color: transparent;
   --menu-text-color: transparent;
@@ -88,6 +89,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .search-result {
+  color: var(--search-result-text-color);
   width: 100%;
   padding: 10px;
   height: 30px;

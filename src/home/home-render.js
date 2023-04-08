@@ -86,14 +86,15 @@ readTextFile("../colorscheme/colorscheme.txt", function(text1) {
 function gotColorScheme(cs) {
     let colorschemeCSS = JSON.parse(cs);
     let r = document.querySelector(':root');
-    r.style.setProperty('--body-color', colorschemeCSS["body"]);
+    r.style.setProperty('--body-color', colorschemeCSS["START-body"]);
     r.style.setProperty('--search-bar-input-color', colorschemeCSS["START-search-bar-input"]);
     r.style.setProperty('--search-bar-enter-color', colorschemeCSS["START-search-bar-enter"]);
     r.style.setProperty('--search-bar-enter-hover-color', colorschemeCSS["START-search-bar-enter-hover"]);
+    r.style.setProperty('--search-result-text-color', colorschemeCSS["START-search-result-text"])
     r.style.setProperty('--search-result-hover-color', colorschemeCSS["START-search-result-hover"]);
     r.style.setProperty('--menu-color', colorschemeCSS["ALL-menu-color"]);
     r.style.setProperty('--menu-text-color', colorschemeCSS["ALL-menu-text-color"]);
-    r.style.setProperty('--scrollbar-track', colorschemeCSS["--ALL-menu-scrollbar-track"]);
+    r.style.setProperty('--scrollbar-track', colorschemeCSS["ALL-menu-scrollbar-track"]);
     r.style.setProperty('--scrollbar-thumb', colorschemeCSS["ALL-menu-scrollbar-thumb"]);
 }
 
