@@ -95,4 +95,11 @@ function gotColorScheme(cs) {
     r.style.setProperty('--body-color', colorschemeCSS["SEARCH-body"]);
     r.style.setProperty('--menu-color', colorschemeCSS["ALL-menu-color"]);
     r.style.setProperty('--menu-text-color', colorschemeCSS["ALL-menu-text-color"]);
+    r.style.setProperty('--scrollbar-track', colorschemeCSS["ALL-menu-scrollbar-track"]);
+    r.style.setProperty('--scrollbar-thumb', colorschemeCSS["ALL-scrollbar-thumb"]);
+    r.style.setProperty('--header-text-color', colorschemeCSS["SEARCH-header-text-color"]);
+    r.style.setProperty('--subheader-text-color', colorschemeCSS["SEARCH-subheader-text-color"]);
+    r.style.setProperty('--subsubheader-text-color', colorschemeCSS["SEARCH-subsubheader-text-color"]);
+    r.style.setProperty('--normal-text-color', colorschemeCSS["SEARCH-normal-text-color"]);
+    r.style.setProperty('--title-text-color', colorschemeCSS["SEARCH-title-text-color"]);
 }

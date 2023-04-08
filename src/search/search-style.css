@@ -6,7 +6,12 @@
     --menu-text-color: transparent;
     --scrollbar-track: transparent;
     --scrollbar-thumb: transparent;
-}
+    --header-text-color: transparent;
+    --subheader-text-color: transparent;
+    --subsubheader-text-color: transparent;
+    --normal-text-color: transparent;
+    --title-text-color: transparent;
+  }
 
 body {
     background-color: var(--body-color);
@@ -40,6 +45,26 @@ body {
     padding: 10px;
 }
 
+.title {
+  color: var(--title-text-color);
+}
+
+.content-header-content {
+  color: var(--header-text-color);
+}
+
+.content-subheader-content {
+  color: var(--subheader-text-color);
+}
+
+.content-subsubheader-content {
+  color: var(--subsubheader-text-color);
+}
+
+.content-text-content {
+  color: var(--normal-text-color);
+}
+
 
 /* MENU_BAR */
 
@@ -56,4 +81,4 @@ body {
     font-size: 16px;
     color: var(--menu-text-color);
     padding: 10px;
-  }
+}
