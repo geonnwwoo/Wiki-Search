@@ -1,3 +1,5 @@
+// Rendering Article
+
 const electron = require("electron");
 const ipc = electron.ipcRenderer;
 const title = document.querySelector(".title");
@@ -67,7 +69,7 @@ ipc.on('toSearch: title received', function(event, articleTitle) {
 
 
 
-// VISUAL (COLORSCHEMES)
+// Rendering Frontend
 
 function readTextFile(file, callback) {
     let rawFile = new XMLHttpRequest();
@@ -102,4 +104,20 @@ function gotColorScheme(cs) {
     r.style.setProperty('--subsubheader-text-color', colorschemeCSS["SEARCH-subsubheader-text-color"]);
     r.style.setProperty('--normal-text-color', colorschemeCSS["SEARCH-normal-text-color"]);
     r.style.setProperty('--title-text-color', colorschemeCSS["SEARCH-title-text-color"]);
+}
+
+
+
+// Redirects
+
+function toHome() {
+    ipc.send('toHome');
+}
+
+function toLiked() {
+    ipc.send('toLiked');
+}
+
+function toLibrary() {
+    ipc.send('toLibrary');
 }

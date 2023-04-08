@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela%20Round">
     <link rel="stylesheet" href="search-style.css"/>
     <script defer src="search-render.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="MAIN">
-        <nav class="MENU_BAR">
-          <div class="menu-bar-nav">
-            <div class="menu-bar-element">
-              <p class="menu-bar-element-text">Home</p>
-            </div>
-            <div class="menu-bar-element">
-              <p class="menu-bar-element-text">Liked</p>
-            </div>
-            <div class="menu-bar-element">
-              <p class="menu-bar-element-text">Your Library</p>
-            </div>
-          </div>
-         </nav>
+      <nav class="MENU_BAR">
+        <button class="menu-bar-element" onclick="toHome()">
+          <p class="menu-bar-element-text">Home</p>
+        </button>
+        <button class="menu-bar-element" onclick="toLiked()">
+          <p class="menu-bar-element-text">Liked</p>
+        </button>
+        <button class="menu-bar-element" onclick="toLibrary()">
+          <p class="menu-bar-element-text">Your Library</p>
+        </button>
+      </nav>
         <div class="ARTICLE">
             <h2 class="title"></h2>
             <div class="content"></div>
@@ -38,5 +36,5 @@
             </template>
         </div>
     </div>
-</body>
+  </body>
 </html>

@@ -61,7 +61,7 @@ function toSearch(pagenumber) {
 }
 
 
-// VISUAL (COLORSCHEMES)
+// Rendering Frontend
 
 function readTextFile(file, callback) {
     let rawFile = new XMLHttpRequest();
@@ -98,3 +98,18 @@ function gotColorScheme(cs) {
     r.style.setProperty('--scrollbar-thumb', colorschemeCSS["ALL-menu-scrollbar-thumb"]);
 }
 
+
+
+// Redirects
+
+function toHome() {
+    ipc.send('toHome');
+}
+
+function toLiked() {
+    ipc.send('toLiked');
+}
+
+function toLibrary() {
+    ipc.send('toLibrary');
+}
