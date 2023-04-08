@@ -5,6 +5,7 @@
     "START-search-bar-enter-hover":"#4751c4",
     "START-search-result-text":"#ffffff",
     "START-search-result-hover":"#2a2929",
+    "START-search-result-hover-speed":"100ms",
     "SEARCH-body":"#121212",
     "SEARCH-title-text-color": "#ffffff",
     "SEARCH-header-text-color":"#ffffff",
@@ -12,7 +13,8 @@
     "SEARCH-subsubheader-text-color":"#ffffff",
     "SEARCH-normal-text-color":"#ffffff",
     "ALL-menu-color":"#000000",
-    "ALL-menu-text-color": "#ffffff",
+    "ALL-menu-text-color": "#b3b3b3",
+    "ALL-menu-text-hover-color": "#ffffff",
     "ALL-menu-scrollbar-track": "#transparent",
     "ALL-menu-scrollbar-thumb": "transparent"
 }

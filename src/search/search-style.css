@@ -4,6 +4,7 @@
     --body-color: transparent;
     --menu-color: transparent;
     --menu-text-color: transparent;
+    --menu-text-hover-color: transparent;
     --scrollbar-track: transparent;
     --scrollbar-thumb: transparent;
     --header-text-color: transparent;
@@ -34,7 +35,7 @@ body {
 
 .MAIN {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 6fr;
     width: 100%;
 }
 
@@ -83,4 +84,9 @@ body {
     padding: 2px;
     background-color: transparent;
     border: 0;
+    transition: color 100ms ease;
+}
+
+.menu-bar-element:hover {
+  color: var(--menu-text-hover-color);
 }

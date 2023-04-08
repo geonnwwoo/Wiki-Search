@@ -92,8 +92,10 @@ function gotColorScheme(cs) {
     r.style.setProperty('--search-bar-enter-hover-color', colorschemeCSS["START-search-bar-enter-hover"]);
     r.style.setProperty('--search-result-text-color', colorschemeCSS["START-search-result-text"])
     r.style.setProperty('--search-result-hover-color', colorschemeCSS["START-search-result-hover"]);
+    r.style.setProperty('--search-result-hover-speed', colorschemeCSS["START-search-result-hover-speed"]);
     r.style.setProperty('--menu-color', colorschemeCSS["ALL-menu-color"]);
     r.style.setProperty('--menu-text-color', colorschemeCSS["ALL-menu-text-color"]);
+    r.style.setProperty('--menu-text-hover-color', colorschemeCSS["ALL-menu-text-hover-color"]);
     r.style.setProperty('--scrollbar-track', colorschemeCSS["ALL-menu-scrollbar-track"]);
     r.style.setProperty('--scrollbar-thumb', colorschemeCSS["ALL-menu-scrollbar-thumb"]);
 }

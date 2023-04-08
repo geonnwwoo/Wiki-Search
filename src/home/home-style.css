@@ -7,8 +7,10 @@
   --search-bar-enter-hover-color: transparent;
   --search-result-text-color: transparent;
   --search-result-hover-color: transparent;
+  --search-result-hover-speed: 0ms;
   --menu-color: transparent;
   --menu-text-color: transparent;
+  --menu-text-hover-color: transparent;
   --scrollbar-track: transparent;
   --scrollbar-thumb: transparent;
 }
@@ -97,7 +99,7 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
   border-radius: 6px;
   background-color: transparent;
-  transition: background-color 200ms ease;
+  transition: background-color var(--search-result-hover-speed) ease;
 }
 
 .search-result-header {
@@ -123,4 +125,9 @@ body::-webkit-scrollbar-thumb {
   padding: 2px;
   background-color: transparent;
   border: 0;
+  transition: color 100ms ease;
+}
+
+.menu-bar-element:hover {
+  color: var(--menu-text-hover-color);
 }
