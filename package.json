@@ -15,8 +15,7 @@
   "author": "Geonwoo Kim",
   "license": "MIT",
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0",
-    "svelte": "3.58.0"
+    "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.5",
