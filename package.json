@@ -16,7 +16,8 @@
   "license": "MIT",
   "dependencies": {
     "@vue/cli": "5.0.8",
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "xml2js": "0.5.0"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.5",
