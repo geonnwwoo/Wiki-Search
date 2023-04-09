@@ -4,7 +4,9 @@
 
 #### Prerequisites
 
-You need to have Node js installed on your machine, as well as the npm package manager.
+###### Node JS
+
+You need to have Node JS installed on your machine, as well as the npm package manager.
 To download both, go [here](https://nodejs.org/en/download) and download Node js.
 
 #### Installation
