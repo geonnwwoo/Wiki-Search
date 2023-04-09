@@ -1,3 +1,5 @@
+// Rendering Article
+
 const electron = require("electron");
 const ipc = electron.ipcRenderer;
 const title = document.querySelector(".title");
@@ -6,8 +8,6 @@ const headerCard = document.querySelector(".content-header");
 const subheaderCard = document.querySelector(".content-subheader");
 const subsubheaderCard = document.querySelector(".content-subsubheader");
 const textCard = document.querySelector(".content-text");
-
-
 
 function splitStringByHeaders(str) {
     const regex = /^(={2,4})(.+?)(={2,4})/gm;
@@ -31,7 +31,7 @@ function splitStringByHeaders(str) {
     return sections;
 }
 
-ipc.on('start->search: content article received', function(event, articleContent) {
+ipc.on('toSearch: content article received', function(event, articleContent) {
     console.log(splitStringByHeaders(articleContent));
     splitArticleContent = splitStringByHeaders(articleContent);
     splitArticleContentLength = splitArticleContent.length;
@@ -63,13 +63,13 @@ ipc.on('start->search: content article received', function(event, articleContent
     }
 });
 
-ipc.on('start->search: title received', function(event, articleTitle) {
+ipc.on('toSearch: title received', function(event, articleTitle) {
     title.textContent = articleTitle;
 });
 
 
 
-// VISUAL (COLORSCHEMES)
+// Rendering Frontend
 
 function readTextFile(file, callback) {
     let rawFile = new XMLHttpRequest();
@@ -95,4 +95,30 @@ function gotColorScheme(cs) {
     let colorschemeCSS = JSON.parse(cs);
     let r = document.querySelector(':root');
     r.style.setProperty('--body-color', colorschemeCSS["SEARCH-body"]);
+    r.style.setProperty('--menu-color', colorschemeCSS["ALL-menu-color"]);
+    r.style.setProperty('--menu-text-color', colorschemeCSS["ALL-menu-text-color"]);
+    r.style.setProperty('--menu-text-hover-color', colorschemeCSS["ALL-menu-text-hover-color"]);
+    r.style.setProperty('--scrollbar-track', colorschemeCSS["ALL-menu-scrollbar-track"]);
+    r.style.setProperty('--scrollbar-thumb', colorschemeCSS["ALL-scrollbar-thumb"]);
+    r.style.setProperty('--header-text-color', colorschemeCSS["SEARCH-header-text-color"]);
+    r.style.setProperty('--subheader-text-color', colorschemeCSS["SEARCH-subheader-text-color"]);
+    r.style.setProperty('--subsubheader-text-color', colorschemeCSS["SEARCH-subsubheader-text-color"]);
+    r.style.setProperty('--normal-text-color', colorschemeCSS["SEARCH-normal-text-color"]);
+    r.style.setProperty('--title-text-color', colorschemeCSS["SEARCH-title-text-color"]);
+}
+
+
+
+// Redirects
+
+function toHome() {
+    ipc.send('toHome');
+}
+
+function toLiked() {
+    ipc.send('toLiked');
+}
+
+function toLibrary() {
+    ipc.send('toLibrary');
 }

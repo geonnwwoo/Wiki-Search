@@ -1,8 +1,8 @@
 {
-  "name": "",
+  "name": "wiki-search",
   "productName": "",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "A computer application for searching Wikipedia articles",
   "main": "src/index.ts",
   "scripts": {
     "start": "electron-forge start",

@@ -1,29 +1,45 @@
 :root {
+  font-size: 16px;
+  font-family: 'Varcela Round';
   --body-color: transparent;
   --search-bar-input-color: transparent;
   --search-bar-enter-color: transparent;
   --search-bar-enter-hover-color: transparent;
+  --search-result-text-color: transparent;
   --search-result-hover-color: transparent;
+  --search-result-hover-speed: 0ms;
+  --menu-color: transparent;
+  --menu-text-color: transparent;
+  --menu-text-hover-color: transparent;
+  --scrollbar-track: transparent;
+  --scrollbar-thumb: transparent;
 }
 
 body {
-  font-size: 16px;
-  font-family: 'Verdana';
   background-color: var(--body-color);
+  margin: 0px;
 }
 
-/* MAIN */
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+}
 
 .MAIN {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 6fr; 
 }
 
-/* SEARCH */
-
-.SEARCH {
-  display: flex;
-  flex-direction: column;
+.SEARCH { 
+  display: grid; 
+  grid-template-rows: 70px 100px;
   width: 100%;
 }
 
@@ -31,9 +47,9 @@ body {
   display: flex;
   flex-direction: row;
   gap: 0.25rem;
-  width: 100%;
-  height: 55px;
   margin: auto;
+  padding: 10px;
+  width: 90%;
 }
 
 .search-icon {
@@ -70,11 +86,12 @@ body {
   flex-direction: column;
   gap: 0.25rem;
   margin: auto;
-  width: 100%;
+  width: 90%;
   height: 100px;
 }
 
 .search-result {
+  color: var(--search-result-text-color);
   width: 100%;
   padding: 10px;
   height: 30px;
@@ -82,20 +99,35 @@ body {
   text-align: center;
   border-radius: 6px;
   background-color: transparent;
-  transition: background-color 200ms ease;
+  transition: background-color var(--search-result-hover-speed) ease;
+}
+
+.search-result-header {
+  margin-top: -3px;
 }
 
 .search-result:hover {
   background-color: var(--search-result-hover-color);
 }
 
-
-/* MENU_BAR */
-
 .MENU_BAR {
   display: flex;
   flex-direction: column;
-  height: 100px;
-  width: 20%;
-  min-width: 120px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background-color: var(--menu-color);
+}
+
+.menu-bar-element {
+  font-size: 16px;
+  color: var(--menu-text-color);
+  padding: 2px;
+  background-color: transparent;
+  border: 0;
+  transition: color 100ms ease;
+}
+
+.menu-bar-element:hover {
+  color: var(--menu-text-hover-color);
 }

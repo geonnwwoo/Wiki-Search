@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="home-style.css"/>
+    <script defer src="home-render.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela%20Round">
+  </head>
+  <body>
+    <div class="MAIN">
+      <nav class="MENU_BAR">
+        <button class="menu-bar-element" onclick="toHome()">
+          <p class="menu-bar-element-text">Home</p>
+        </button>
+        <button class="menu-bar-element" onclick="toLiked()">
+          <p class="menu-bar-element-text">Liked</p>
+        </button>
+        <button class="menu-bar-element" onclick="toLibaray()">
+          <p class="menu-bar-element-text">Your Library</p>
+        </button>
+      </nav>
+      <div class="SEARCH">
+        <div class="search-bar-wrapper">
+          <input class="search-bar-input" placeholder="Search a Wikipedia Article">
+          <button class="search-bar-enter">
+            <img src="../assets/search-icon-img.png" class="search-icon">
+          </button>
+        </div>
+        <div class="search-query-wrapper" data-search-query-container></div>
+        <template search-results-template>
+          <button class="search-result" id="" onclick="toSearch(id)">
+            <p id="aa6" class="search-result-header" data-header></p>
+          </button>
+        </template>
+      </div>
+      <div class="pinned">
+        <h1 class="pinnedTitle">Pinned</h1>
+      </div>
+    </div>
+  </body>
+</html>
+
+

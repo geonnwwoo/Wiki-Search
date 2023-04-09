@@ -9,25 +9,38 @@ if (require('electron-squirrel-startup')) {
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1600,
+    height: 1200,
+    backgroundColor: "#000000",
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false
     },
   });
 
-  mainWindow.loadFile(path.join(__dirname, 'start-page/start-page.html'));
+  mainWindow.loadFile(path.join(__dirname, 'home/home.html'));
   mainWindow.webContents.openDevTools();
 
-  ipc.on('start->search', function(event, pagecontent, pagetitle) {
+  ipc.on('toSearch', function(event, pagecontent, pagetitle) {
     async function loadSearchFile() {
-      mainWindow.loadFile(path.join(__dirname, 'search-page/search-page.html'));
+      mainWindow.loadFile(path.join(__dirname, 'search/search.html'));
       await new Promise(resolve => setTimeout(resolve, 1000));
-      mainWindow.webContents.send('start->search: content article received', pagecontent);
-      mainWindow.webContents.send('start->search: title received', pagetitle);
+      mainWindow.webContents.send('toSearch: content article received', pagecontent);
+      mainWindow.webContents.send('toSearch: title received', pagetitle);
     }
     loadSearchFile();
+  });
+
+  ipc.on('toHome', function(event) {
+    mainWindow.loadFile(path.join(__dirname, 'home/home.svelte'));
+  });
+
+  ipc.on('toLiked', function(event) {
+    mainWindow.loadFile(path.join(__dirname, 'liked/liked.svelte'));
+  });
+
+  ipc.on('toLibrary', function(event) {
+    mainWindow.loadFile(path.join(__dirname, 'library/library.svelte'));
   });
 };
 

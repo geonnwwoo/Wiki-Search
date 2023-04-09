@@ -1,0 +1,92 @@
+:root {
+    font-size: 16px;
+    font-family: 'Verdana';
+    --body-color: transparent;
+    --menu-color: transparent;
+    --menu-text-color: transparent;
+    --menu-text-hover-color: transparent;
+    --scrollbar-track: transparent;
+    --scrollbar-thumb: transparent;
+    --header-text-color: transparent;
+    --subheader-text-color: transparent;
+    --subsubheader-text-color: transparent;
+    --normal-text-color: transparent;
+    --title-text-color: transparent;
+  }
+
+body {
+    background-color: var(--body-color);
+    margin: 0px;
+  }
+  
+  body::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+  }
+
+/* MAIN */
+
+.MAIN {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    width: 100%;
+}
+
+/* ARTICLE */
+
+.ARTICLE {
+    width: 90%;
+    padding: 10px;
+}
+
+.title {
+  color: var(--title-text-color);
+}
+
+.content-header-content {
+  color: var(--header-text-color);
+}
+
+.content-subheader-content {
+  color: var(--subheader-text-color);
+}
+
+.content-subsubheader-content {
+  color: var(--subsubheader-text-color);
+}
+
+.content-text-content {
+  color: var(--normal-text-color);
+}
+
+
+/* MENU_BAR */
+
+.MENU_BAR {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    background-color: var(--menu-color);
+}
+
+.menu-bar-element {
+    font-size: 16px;
+    color: var(--menu-text-color);
+    padding: 2px;
+    background-color: transparent;
+    border: 0;
+    transition: color 100ms ease;
+}
+
+.menu-bar-element:hover {
+  color: var(--menu-text-hover-color);
+}
