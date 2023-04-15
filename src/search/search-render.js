@@ -31,6 +31,10 @@ function splitStringByHeaders(str) {
     return sections;
 }
 
+function replaceToLine(str) {
+    return str.replace(/\n/g, "<br>");
+}
+
 ipc.on('toSearch: content article received', function(event, articleContent) {
     console.log(splitStringByHeaders(articleContent));
     splitArticleContent = splitStringByHeaders(articleContent);
@@ -39,25 +43,25 @@ ipc.on('toSearch: content article received', function(event, articleContent) {
         if (splitArticleContent[i]["type"] == "normal") {
             const clone = textCard.content.cloneNode(true);
             const nodeTextContent = clone.querySelector(".content-text-content");
-            nodeTextContent.textContent = splitArticleContent[i]["content"];
+            nodeTextContent.innerHTML = replaceToLine(splitArticleContent[i]["content"]);
             textContainer.append(clone);
         }
         else if (splitArticleContent[i]["type"] == "header1") {
             const clone = headerCard.content.cloneNode(true);
             const nodeTextContent = clone.querySelector(".content-header-content");
-            nodeTextContent.textContent = splitArticleContent[i]["content"];
+            nodeTextContent.innerHTML = replaceToLine(splitArticleContent[i]["content"]);
             textContainer.append(clone);
         }
         else if (splitArticleContent[i]["type"] == "header2") {
             const clone = subheaderCard.content.cloneNode(true);
             const nodeTextContent = clone.querySelector(".content-subheader-content");
-            nodeTextContent.textContent = splitArticleContent[i]["content"];
+            nodeTextContent.innerHTML = replaceToLine(splitArticleContent[i]["content"]);
             textContainer.append(clone);
         }
         else if (splitArticleContent[i]["type"] == "header3") {
             const clone = subsubheaderCard.content.cloneNode(true);
             const nodeTextContent = clone.querySelector(".content-subsubheader-content");
-            nodeTextContent.textContent = splitArticleContent[i]["content"];
+            nodeTextContent.innerHTML = replaceToLine(splitArticleContent[i]["content"]);
             textContainer.append(clone);
         }
     }
