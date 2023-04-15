@@ -32,15 +32,15 @@ const createWindow = () => {
   });
 
   ipc.on('toHome', function(event) {
-    mainWindow.loadFile(path.join(__dirname, 'home/home.svelte'));
+    mainWindow.loadFile(path.join(__dirname, 'home/home.html'));
   });
 
   ipc.on('toLiked', function(event) {
-    mainWindow.loadFile(path.join(__dirname, 'liked/liked.svelte'));
+    mainWindow.loadFile(path.join(__dirname, 'liked/liked.html'));
   });
 
   ipc.on('toLibrary', function(event) {
-    mainWindow.loadFile(path.join(__dirname, 'library/library.svelte'));
+    mainWindow.loadFile(path.join(__dirname, 'library/library.html'));
   });
 };
 
