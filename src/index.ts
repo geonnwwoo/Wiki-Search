@@ -18,12 +18,12 @@ const createWindow = () => {
     },
   });
 
-  mainWindow.loadFile(path.join(__dirname, 'home/home.html'));
+  mainWindow.loadFile(path.join(__dirname, 'front/home.html'));
   mainWindow.webContents.openDevTools();
 
   ipc.on('toSearch', function(event, pagecontent, pagetitle) {
     async function loadSearchFile() {
-      mainWindow.loadFile(path.join(__dirname, 'search/search.html'));
+      mainWindow.loadFile(path.join(__dirname, 'front/search.html'));
       await new Promise(resolve => setTimeout(resolve, 1000));
       mainWindow.webContents.send('toSearch: content article received', pagecontent);
       mainWindow.webContents.send('toSearch: title received', pagetitle);
@@ -32,15 +32,15 @@ const createWindow = () => {
   });
 
   ipc.on('toHome', function(event) {
-    mainWindow.loadFile(path.join(__dirname, 'home/home.html'));
+    mainWindow.loadFile(path.join(__dirname, 'front/home.html'));
   });
 
   ipc.on('toLiked', function(event) {
-    mainWindow.loadFile(path.join(__dirname, 'liked/liked.html'));
+    mainWindow.loadFile(path.join(__dirname, 'front/liked.html'));
   });
 
   ipc.on('toLibrary', function(event) {
-    mainWindow.loadFile(path.join(__dirname, 'library/library.html'));
+    mainWindow.loadFile(path.join(__dirname, 'front/library.html'));
   });
 };
 
