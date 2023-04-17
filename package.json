@@ -11,11 +11,16 @@
     "preview": "vite preview",
     "electron:start": "electron ."
   },
-  "keywords": ["electron", "wikipedia", "javascript", "vue"],
+  "keywords": [
+    "electron",
+    "wikipedia",
+    "javascript",
+    "vue"
+  ],
   "author": "Geonwoo Kim",
-  "license":"MIT",
+  "license": "MIT",
   "dependencies": {
-    "electron":"9.4.4",
+    "electron": "9.4.4",
     "electron-squirrel-startup": "^1.0.0",
     "vue": "^3.2.47"
   },
