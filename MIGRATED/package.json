@@ -1,14 +1,22 @@
 {
-  "name": "migrated",
+  "name": "wiki-search",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "A computer application for searching Wikipedia articles",
+  "main": "index.cts",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "electron:start": "electron ."
   },
+  "keywords": ["electron", "wikipedia", "javascript", "vue"],
+  "author": "Geonwoo Kim",
+  "license":"MIT",
   "dependencies": {
+    "electron":"9.4.4",
+    "electron-squirrel-startup": "^1.0.0",
     "vue": "^3.2.47"
   },
   "devDependencies": {
