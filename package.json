@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "description": "A computer application for searching Wikipedia articles",
-  "main": "index.cts",
+  "main": "./src/index.cts",
   "type": "module",
   "scripts": {
     "dev": "vite",
