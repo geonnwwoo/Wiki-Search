@@ -19,13 +19,13 @@ function createWindow () {
     }
   })
 
-  win.loadFile('./src/front/home.html')
+  win.loadFile('./src/front/home/home.html')
   win.webContents.openDevTools();
 
   ipc.on('toSearch', function(event, pagecontent, pagetitle) {
     console.log("received");
     async function loadSearchFile() {
-      win.loadFile(path.join(__dirname, './front/search.html'));
+      win.loadFile(path.join(__dirname, './front/search/search.html'));
       await new Promise(resolve => setTimeout(resolve, 1000));
       win.webContents.send('toSearch: content article received', pagecontent);
       win.webContents.send('toSearch: title received', pagetitle);
@@ -34,15 +34,15 @@ function createWindow () {
   });
 
   ipc.on('toHome', function(event) {
-    win.loadFile(path.join(__dirname, './front/home.html'));
+    win.loadFile(path.join(__dirname, './front/home/home.html'));
   });
 
   ipc.on('toLiked', function(event) {
-    win.loadFile(path.join(__dirname, './front/liked.html'));
+    win.loadFile(path.join(__dirname, './front/liked/liked.html'));
   });
 
   ipc.on('toLibrary', function(event) {
-    win.loadFile(path.join(__dirname, './front/library.html'));
+    win.loadFile(path.join(__dirname, './front/library/dist/index.html'));
   });
 }
 

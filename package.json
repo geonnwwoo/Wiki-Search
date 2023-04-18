@@ -22,7 +22,9 @@
   "dependencies": {
     "electron": "9.4.4",
     "electron-squirrel-startup": "^1.0.0",
-    "vue": "^3.2.47"
+    "vue": "3.2.47",
+    "vue-loader": "17.0.1",
+    "vue-template-compiler": "2.7.14"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",
